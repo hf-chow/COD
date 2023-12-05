@@ -2,7 +2,6 @@ from google.api_core.client_options import ClientOptions
 from google.api_core.exceptions import FailedPrecondition
 from google.cloud import documentai  # type: ignore
 
-# TODO(developer): Uncomment these variables before running the sample.
 PROJECT_ID = "sia-gpt-405301"
 LOCATION = "us"
 PROCESSOR_DISPLAY_NAME = "test"
