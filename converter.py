@@ -14,11 +14,15 @@ def get_keys(search_dict):
     return keys
 
 
-
 documentai_sample = "document-ocr.json"
 textract_sample = "textract-ocr.json"
 
 sample = load_sample(textract_sample)
 keys = get_keys(sample)
-print(keys)
 
+types = []
+
+for b in sample["Blocks"]:
+    for i in b:
+        for j in i:
+            types.append(j["Type"])
