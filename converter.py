@@ -3,6 +3,8 @@ import json
 def load_sample(json_file):
     with open(json_file) as file:
         resp = json.load(file)
+        
+
     return resp
 
 def get_keys(search_dict):
@@ -21,8 +23,17 @@ sample = load_sample(textract_sample)
 keys = get_keys(sample)
 
 types = []
+keys = []
+print(type(sample))
+print(len(sample))
 
-for b in sample["Blocks"]:
-    for i in b:
-        for j in i:
-            types.append(j["Type"])
+print(type(sample["Blocks"]))
+print(sample["Blocks"][0])
+
+for i in sample["Blocks"]:
+    types.append(i["BlockType"])
+    for k, _ in i.items():
+        keys.append(k)
+
+
+print(types)
